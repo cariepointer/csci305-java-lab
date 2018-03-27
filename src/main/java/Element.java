@@ -1,5 +1,16 @@
 package csci305.javalab;
 
-public class Element {
+public abstract class Element {
+  private String name;
 
+  public Element() {}
+  public Element(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public abstract void compareTo(Element e);
 }
