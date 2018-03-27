@@ -13,6 +13,7 @@ public class Lizard extends Element {
   }
   @Override
   public String compareTo(Element e) {
-    return "";
+    Outcome o = new Outcome (name, e.getName());
+    return o.toString();
   }
 }

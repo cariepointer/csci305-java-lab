@@ -59,7 +59,7 @@ public class Outcome {
   }
 
   public String toString() {
-    return outcome_string + "--" + outcome_decision;
+    return outcome_string + " -- " + outcome_decision;
   }
 
 }
