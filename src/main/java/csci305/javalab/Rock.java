@@ -15,8 +15,8 @@ public class Rock extends Element {
 
 
   @Override
-  public void compareTo(Element e) {
+  public String compareTo(Element e) {
     Outcome o = new Outcome (name, e.getName());
-
+    return o.toString();
   }
 }

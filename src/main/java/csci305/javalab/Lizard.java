@@ -1,10 +1,10 @@
 package csci305.javalab;
 
-public class Spock extends Element {
+public class Lizard extends Element {
   private String name;
 
-  public Spock() {}
-  public Spock(String name) {
+  public Lizard() {}
+  public Lizard(String name) {
     this.name = name;
   }
 
@@ -12,7 +12,7 @@ public class Spock extends Element {
     return name;
   }
   @Override
-  public void compareTo(Element e) {
-
+  public String compareTo(Element e) {
+    return "";
   }
 }

@@ -12,7 +12,7 @@ public class Scissors extends Element {
     return name;
   }
   @Override
-  public void compareTo(Element e) {
-
+  public String compareTo(Element e) {
+    return "";
   }
 }
