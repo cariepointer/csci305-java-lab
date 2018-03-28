@@ -1,8 +1,9 @@
 package csci305.javalab;
 import java.util.*;
+import java.util.Random;
 
 public class RandomBot extends Player {
-  private Map moves;
+  private Map<Integer, Element> moves;
   public RandomBot(String name) {
     super(name);
   }
@@ -11,13 +12,15 @@ public class RandomBot extends Player {
     return super.getName();
   }
 
-  public void setMoves(Map moves) {
+  public void setMoves(Map<Integer, Element> moves) {
     this.moves = moves;
   }
 
   @Override
   public Element play() {
-    Element rock = new Rock("Rock");
-    return rock;
+    Random rand = new Random();
+    int n = rand.nextInt(moves.size())+1;
+    Element e = moves.get(n);
+    return e;
   }
 }
