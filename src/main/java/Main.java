@@ -11,6 +11,8 @@ public class Main {
     moves.put("Spock", new Rock("Spock"));
     moves.put("Lizard", new Rock("Lizard"));
 
+    RandomBot rb = new RandomBot("RandomBot");
+    rb.setMoves(moves);
 
   }
 
