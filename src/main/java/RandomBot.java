@@ -1,14 +1,15 @@
 package csci305.javalab;
 
-public class StupidBot extends Player {
+public class RandomBot extends Player {
 
-  public StupidBot(String name) {
+  public RandomBot(String name) {
     super(name);
   }
 
   public String getName() {
     return super.getName();
   }
+
 
   @Override
   public Element play() {
