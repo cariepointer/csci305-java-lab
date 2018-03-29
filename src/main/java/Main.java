@@ -13,10 +13,10 @@ public class Main {
 
     RandomBot rb = new RandomBot("RandomBot");
     rb.setMoves(moves);
-    //System.out.println(rb.play().getName());
+    System.out.println(rb.play().getName());
     IterativeBot ib = new IterativeBot("IterativeBot");
     ib.setMoves(moves);
-    System.out.println(ib.play().getName());
+    //System.out.println(ib.play().getName());
   }
 
 }
