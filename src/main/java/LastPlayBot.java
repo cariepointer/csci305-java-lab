@@ -5,7 +5,7 @@ public class LastPlayBot extends Player {
 
   private Map<Integer, Element> moves;
   private boolean firstMove = true;
-  private Player opponent;
+//  private Player opponent;
 
   public LastPlayBot(String name) {
     super(name);
@@ -20,7 +20,7 @@ public class LastPlayBot extends Player {
   }
 
   public void setOpponent(Player opponent) {
-    this.opponent = opponent;
+    super.setOpponent(opponent);
   }
 
   public Element getPrevMove() {
@@ -41,7 +41,7 @@ public class LastPlayBot extends Player {
       firstMove = false;
     }
     else {
-      e = opponent.getPrevMove();
+      e = super.getOpponent().getPrevMove();
     }
     return e;
   }

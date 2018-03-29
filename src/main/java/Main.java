@@ -27,18 +27,16 @@ public class Main {
     System.out.print("Select Player 2: ");
     Player p2 = pickPlayer(2);
 
-    // if (p1 instanceof LastPlayBot) {
-    //   p1.setOpponent(p2);
-    // }
-    // else if (p2 instanceof LastPlayBot) {
-    //   p2.setOpponent(p1);
-    // }
-  //   //need for LastPlayBot
-  //   //p2.setOpponent(p1);
-  //
+    if (p1.getName() == "LastPlayBot") {
+      p1.setOpponent(p2);
+    }
+    else if (p2.getName() == "LastPlayBot") {
+      p2.setOpponent(p1);
+    }
+
     Element e1;
     Element e2;
-  //
+
     for (int i = 0; i <4; i++) {
       e1 = p1.play();
       e2 = p2.play();
@@ -55,7 +53,7 @@ public class Main {
   public static Player pickPlayer(int playerNum) {
 
     int n = s.nextInt();
-    while (n > 6) {
+    while (n > 6 || n < 1) {
       System.out.println("Invalid choice. Please try again");
       System.out.print("Select Player " + playerNum + ": ");
       n = s.nextInt();
@@ -64,26 +62,26 @@ public class Main {
     Player player;
 
     switch (n) {
-      case 1: Human hp = new Human("Player " + playerNum);
+      case 1: Human hp = new Human("Human");
               hp.setMoves(moves);
               player = hp;
               break;
-      case 2: StupidBot sb = new StupidBot("Player " + playerNum);
+      case 2: StupidBot sb = new StupidBot("StupidBot");
               player = sb;
               break;
-      case 3: RandomBot rb = new RandomBot("Player " + playerNum);
+      case 3: RandomBot rb = new RandomBot("RandomBot");
               rb.setMoves(moves);
               player = rb;
               break;
-      case 4: IterativeBot ib = new IterativeBot("Player " + playerNum);
+      case 4: IterativeBot ib = new IterativeBot("IterativeBot");
               ib.setMoves(moves);
               player = ib;
               break;
-      case 5: LastPlayBot lb = new LastPlayBot("Player " + playerNum);
+      case 5: LastPlayBot lb = new LastPlayBot("LastPlayBot");
               lb.setMoves(moves);
               player = lb;
               break;
-      case 6: MyBot mb = new MyBot("Player " + playerNum);
+      case 6: MyBot mb = new MyBot("MyBot");
               player = mb;
               break;
       default: player = null;
