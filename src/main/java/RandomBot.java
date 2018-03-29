@@ -21,9 +21,10 @@ public class RandomBot extends Player {
 
   @Override
   public Element play() {
-    
+
     int n = rand.nextInt(moves.size())+1;
     Element e = moves.get(n);
+    //super.setPrevMove(e);
     return e;
   }
 }

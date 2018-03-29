@@ -19,12 +19,17 @@ public class IterativeBot extends Player {
      i = moves.values().iterator();
   }
 
+  public Element getPrevMove() {
+    return super.getPrevMove();
+  }
+
   @Override
   public Element play() {
     if (!i.hasNext()) {
       i = moves.values().iterator();
     }
     Element e = i.next();
+    //super.setPrevMove(e);
     return e;
   }
 }
