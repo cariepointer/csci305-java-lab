@@ -17,6 +17,7 @@ public class Human extends Player {
   public void setMoves(Map<Integer, Element> moves) {
     this.moves = moves;
   }
+
   public Element getPrevMove() {
     return super.getPrevMove();
   }
@@ -36,7 +37,7 @@ public class Human extends Player {
     System.out.print("Enter your move: ");
     int n = s.nextInt();
 
-    while (n > 6) {
+    while (n > 5) {
       System.out.println("Invalid move. Please try again");
       System.out.print("Enter your move: ");
       n = s.nextInt();
