@@ -27,6 +27,8 @@ public class Main {
     System.out.print("Select Player 2: ");
     Player p2 = pickPlayer(2);
 
+    System.out.println("Player 1: " + p1.getName() + " vs. Player 2: " + p2.getName() + ". Go!");
+
     if (p1.getName() == "LastPlayBot") {
       p1.setOpponent(p2);
     }
@@ -40,10 +42,11 @@ public class Main {
     for (int i = 0; i <4; i++) {
       e1 = p1.play();
       e2 = p2.play();
-      System.out.println("Round "+(i+1));
-      System.out.println("P1: "+ e1.getName());
-      System.out.println("P2: "+ e2.getName());
+      System.out.println("Round "+(i+1)+ ":");
+      System.out.println("\tPlayer 1 chose "+ e1.getName());
+      System.out.println("\tPlayer 2 chose "+ e2.getName());
       System.out.println(e1.compareTo(e2));
+      System.out.println("=============================");
       p1.setPrevMove(e1);
       p2.setPrevMove(e2);
     }
