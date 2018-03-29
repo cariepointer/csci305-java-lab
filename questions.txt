@@ -1,0 +1,10 @@
+1. My LastPlayBot class gets the opponent's previous move, which is set in the Main class. After both players have played
+their move, the Main class checks if either player is a LastPlayBot. If it is, it calls a method named setOppPrevMove(),
+which sets the move of the player's opponent in the LastPlayBot class. Within the LastPlayBot class, there is a
+boolean firstMove, which checks if it is the first move of that player. If it is the first more, the LastPlayBot will
+play a random move. If it is not the first move, it calls the method getOppPrevMove(), which returns the LastPlayBot's
+opponent's previous move (as set previously by the Main class);
+
+2.
+
+3. 
