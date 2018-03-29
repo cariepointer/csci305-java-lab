@@ -8,6 +8,10 @@ public class Main {
 
   public static void main(String args[]) {
 
+    Element e1;
+    Element e2;
+    Outcome roundOutcome;
+
     moves.put(1, new Rock("Rock"));
     moves.put(2, new Paper("Paper"));
     moves.put(3, new Scissors("Scissors"));
@@ -37,10 +41,6 @@ public class Main {
       p2.setOpponent(p1);
     }
 
-    Element e1;
-    Element e2;
-    Outcome roundOutcome;
-
     for (int i = 0; i <4; i++) {
       e1 = p1.play();
       e2 = p2.play();
@@ -49,7 +49,7 @@ public class Main {
       System.out.println("\tPlayer 2 chose "+ e2.getName());
       roundOutcome = e1.compareTo(e2);
       System.out.println("\t"+roundOutcome.getOutcomeString());
-      printWinner(roundOutcome.getOutcomeDecision());
+      printRoundWinner(roundOutcome.getOutcomeDecision());
       System.out.println("=============================\n");
       p1.setPrevMove(e1);
       p2.setPrevMove(e2);
@@ -58,7 +58,7 @@ public class Main {
 
   }
 
-  public static void printWinner(String s) {
+  public static void printRoundWinner(String s) {
     switch(s) {
       case "Win": System.out.println("Player 1 won the round");
             p1score++;
@@ -86,14 +86,14 @@ public class Main {
 
   public static Player pickPlayer(int playerNum) {
 
+    Player player;
+
     int n = s.nextInt();
     while (n > 6 || n < 1) {
       System.out.println("Invalid choice. Please try again");
       System.out.print("Select Player " + playerNum + ": ");
       n = s.nextInt();
     }
-
-    Player player;
 
     switch (n) {
       case 1: Human hp = new Human("Human");
@@ -120,7 +120,6 @@ public class Main {
               break;
       default: player = null;
               break;
-
     }
     return player;
   }
