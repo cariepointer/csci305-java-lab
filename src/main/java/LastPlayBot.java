@@ -4,6 +4,7 @@ import java.util.*;
 public class LastPlayBot extends Player {
 
   private boolean firstMove = true;
+//  private Element prevMove;
 
   public LastPlayBot(String name) {
     super(name);
@@ -32,6 +33,15 @@ public class LastPlayBot extends Player {
   public void setPrevMove(Element e) {
     super.setPrevMove(e);
   }
+
+  public void setOppPrevMove(Element e) {
+    super.setOppPrevMove(e);
+  }
+
+  public Element getOppPrevMove() {
+    return super.getOppPrevMove();
+  }
+
   @Override
   public Element play() {
     Element e;
@@ -43,7 +53,7 @@ public class LastPlayBot extends Player {
       firstMove = false;
     }
     else {
-      e = super.getOpponent().getPrevMove();
+      e = getOppPrevMove();//super.getOpponent().getPrevMove();
     }
     return e;
   }

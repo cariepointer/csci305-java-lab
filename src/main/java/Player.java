@@ -20,6 +20,14 @@ public abstract class Player {
     return prevMove;
   }
 
+  public void setOppPrevMove(Element e) {
+    this.prevMove = e;
+  }
+
+  public Element getOppPrevMove() {
+    return prevMove;
+  }
+  
   public String getName() {
     return name;
   }

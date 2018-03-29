@@ -34,13 +34,6 @@ public class Main {
 
     System.out.println("Player 1: " + p1.getName() + " vs. Player 2: " + p2.getName() + ". Go!");
 
-    if (p1.getName() == "LastPlayBot") {
-      p1.setOpponent(p2);
-    }
-    else if (p2.getName() == "LastPlayBot") {
-      p2.setOpponent(p1);
-    }
-
     for (int i = 0; i < 5; i++) {
       e1 = p1.play();
       e2 = p2.play();
@@ -51,8 +44,13 @@ public class Main {
       System.out.println("\t"+roundOutcome.getOutcomeString());
       printRoundWinner(roundOutcome.getOutcomeDecision());
       System.out.println("=============================\n");
-      p1.setPrevMove(e1);
-      p2.setPrevMove(e2);
+
+      if (p1.getName() == "LastPlayBot") {
+        p1.setOppPrevMove(e2);
+      }
+      else if (p2.getName() == "LastPlayBot") {
+        p2.setOppPrevMove(e1);
+      }
     }
     printFinalScore();
 
