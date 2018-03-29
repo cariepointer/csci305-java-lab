@@ -41,7 +41,7 @@ public class Main {
       p2.setOpponent(p1);
     }
 
-    for (int i = 0; i <4; i++) {
+    for (int i = 0; i < 5; i++) {
       e1 = p1.play();
       e2 = p2.play();
       System.out.println("Round "+(i+1)+ ":");
