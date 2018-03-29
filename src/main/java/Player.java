@@ -9,12 +9,12 @@ public abstract class Player {
     this.name = name;
   }
 
-  public Element getPrevMove() {
-    return prevMove;
-  }
-
   public void setPrevMove(Element e) {
     this.prevMove = e;
+  }
+
+  public Element getPrevMove() {
+    return prevMove;
   }
 
   public String getName() {

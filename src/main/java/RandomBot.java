@@ -19,6 +19,14 @@ public class RandomBot extends Player {
     rand = new Random();
   }
 
+  public Element getPrevMove() {
+    return super.getPrevMove();
+  }
+
+  public void setPrevMove(Element e) {
+    super.setPrevMove(e);
+  }
+
   @Override
   public Element play() {
 
