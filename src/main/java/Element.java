@@ -12,5 +12,5 @@ public abstract class Element {
     return name;
   }
 
-  public abstract String compareTo(Element e);
+  public abstract Outcome compareTo(Element e);
 }

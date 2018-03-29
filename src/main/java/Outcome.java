@@ -58,6 +58,14 @@ public class Outcome {
     }
   }
 
+  public String getOutcomeString() {
+    return outcome_string;
+  }
+
+  public String getOutcomeDecision() {
+    return outcome_decision;
+  }
+
   public String toString() {
     return outcome_string + " -- " + outcome_decision;
   }

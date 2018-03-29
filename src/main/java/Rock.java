@@ -10,8 +10,8 @@ public class Rock extends Element {
       return super.getName();
     }
     @Override
-    public String compareTo(Element e) {
+    public Outcome compareTo(Element e) {
       Outcome o = new Outcome (getName(), e.getName());
-      return o.toString();
+      return o;
     }
 }
