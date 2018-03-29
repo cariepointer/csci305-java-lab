@@ -22,18 +22,6 @@ public class LastPlayBot extends Player {
     return super.getMoves();
   }
 
-  public void setOpponent(Player opponent) {
-    super.setOpponent(opponent);
-  }
-
-  public Element getPrevMove() {
-    return super.getPrevMove();
-  }
-
-  public void setPrevMove(Element e) {
-    super.setPrevMove(e);
-  }
-
   public void setOppPrevMove(Element e) {
     super.setOppPrevMove(e);
   }

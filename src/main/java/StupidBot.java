@@ -10,14 +10,6 @@ public class StupidBot extends Player {
     return super.getName();
   }
 
-  public Element getPrevMove() {
-    return super.getPrevMove();
-  }
-
-  public void setPrevMove(Element e) {
-    super.setPrevMove(e);
-  }
-
   @Override
   public Element play() {
     Element rock = new Rock("Rock");

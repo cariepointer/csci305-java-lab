@@ -19,13 +19,6 @@ public class MyBot extends Player {
     return super.getMoves();
   }
 
-  public Element getPrevMove() {
-    return super.getPrevMove();
-  }
-
-  public void setPrevMove(Element e) {
-    super.setPrevMove(e);
-  }
   @Override
   public Element play() {
     return new Rock("Rock");

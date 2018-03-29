@@ -21,14 +21,6 @@ public class Human extends Player {
     return super.getMoves();
   }
 
-  public Element getPrevMove() {
-    return super.getPrevMove();
-  }
-
-  public void setPrevMove(Element e) {
-    super.setPrevMove(e);
-  }
-
   @Override
   public Element play() {
     System.out.println("Move choices:");

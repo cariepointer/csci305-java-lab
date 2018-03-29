@@ -12,14 +12,6 @@ public abstract class Player {
     this.name = name;
   }
 
-  public void setPrevMove(Element e) {
-    this.prevMove = e;
-  }
-
-  public Element getPrevMove() {
-    return prevMove;
-  }
-
   public void setOppPrevMove(Element e) {
     this.prevMove = e;
   }
@@ -27,7 +19,7 @@ public abstract class Player {
   public Element getOppPrevMove() {
     return prevMove;
   }
-  
+
   public String getName() {
     return name;
   }
