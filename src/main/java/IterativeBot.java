@@ -1,11 +1,12 @@
 package csci305.javalab;
 import java.util.*;
-import java.util.Random;
 
-public class RandomBot extends Player {
+public class IterativeBot extends Player {
+
   private Map<Integer, Element> moves;
-  
-  public RandomBot(String name) {
+  private Iterator<Element> i;
+
+  public IterativeBot(String name) {
     super(name);
   }
 
@@ -15,13 +16,15 @@ public class RandomBot extends Player {
 
   public void setMoves(Map<Integer, Element> moves) {
     this.moves = moves;
+     i = moves.values().iterator();
   }
 
   @Override
   public Element play() {
-    Random rand = new Random();
-    int n = rand.nextInt(moves.size())+1;
-    Element e = moves.get(n);
+    if (!i.hasNext()) {
+      i = moves.values().iterator();
+    }
+    Element e = i.next();
     return e;
   }
 }
