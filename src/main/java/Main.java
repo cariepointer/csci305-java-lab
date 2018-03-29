@@ -11,12 +11,24 @@ public class Main {
     moves.put(4, new Spock("Spock"));
     moves.put(5, new Lizard("Lizard"));
 
-    RandomBot rb = new RandomBot("RandomBot");
-    rb.setMoves(moves);
-    System.out.println(rb.play().getName());
-    IterativeBot ib = new IterativeBot("IterativeBot");
-    ib.setMoves(moves);
-    //System.out.println(ib.play().getName());
+    RandomBot p1 = new RandomBot("RandomBot");
+    IterativeBot p2 = new IterativeBot("IterativeBot");
+    StupidBot p3 = new StupidBot("StupidBot");
+    p1.setMoves(moves);
+    p2.setMoves(moves);
+
+    Element e1;
+    Element e2;
+
+    for (int i = 0; i <4; i++) {
+      e1 = p1.play();
+      e2 = p2.play();
+      System.out.println("Round "+(i+1));
+      System.out.println("P1: "+ e1.getName());
+      System.out.println("P2: "+ e2.getName());
+      System.out.println(e1.compareTo(e2));
+    }
+
   }
 
 }
