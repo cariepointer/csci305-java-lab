@@ -13,21 +13,28 @@ public class Main {
 
     RandomBot p1 = new RandomBot("RandomBot");
     IterativeBot p2 = new IterativeBot("IterativeBot");
-    StupidBot p3 = new StupidBot("StupidBot");
+    //StupidBot p3 = new StupidBot("StupidBot");
+    LastPlayBot p4 = new LastPlayBot("LastPlayBot");
+
     p1.setMoves(moves);
     p2.setMoves(moves);
+    p4.setMoves(moves);
+    p4.setOpponent(p1);
 
     Element e1;
     Element e2;
 
     for (int i = 0; i <4; i++) {
       e1 = p1.play();
-      e2 = p2.play();
+      e2 = p4.play();
       System.out.println("Round "+(i+1));
       System.out.println("P1: "+ e1.getName());
       System.out.println("P2: "+ e2.getName());
       System.out.println(e1.compareTo(e2));
     }
+
+
+
 
   }
 
