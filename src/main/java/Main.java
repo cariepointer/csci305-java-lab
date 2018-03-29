@@ -14,12 +14,15 @@ public class Main {
     RandomBot p1 = new RandomBot("RandomBot");
     //IterativeBot p2 = new IterativeBot("IterativeBot");
     //StupidBot p3 = new StupidBot("StupidBot");
-    LastPlayBot p2 = new LastPlayBot("LastPlayBot");
+    //LastPlayBot p2 = new LastPlayBot("LastPlayBot");
+    Human p2 = new Human("Human");
 
     p1.setMoves(moves);
   //  p2.setMoves(moves);
     p2.setMoves(moves);
-    p2.setOpponent(p1);
+
+    //need for LastPlayBot
+    //p2.setOpponent(p1);
 
     Element e1;
     Element e2;
