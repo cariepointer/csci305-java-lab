@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Human extends Player {
 
-  private Map<Integer, Element> moves;
   private Scanner s = new Scanner(System.in);
 
   public Human(String name) {
@@ -15,7 +14,11 @@ public class Human extends Player {
   }
 
   public void setMoves(Map<Integer, Element> moves) {
-    this.moves = moves;
+    super.setMoves(moves);
+  }
+
+  public Map<Integer, Element> getMoves() {
+    return super.getMoves();
   }
 
   public Element getPrevMove() {
@@ -43,7 +46,7 @@ public class Human extends Player {
       n = s.nextInt();
     }
 
-    Element e = moves.get(n);
+    Element e = getMoves().get(n);
 
     return e;
   }

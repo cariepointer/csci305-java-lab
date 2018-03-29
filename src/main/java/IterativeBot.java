@@ -3,7 +3,6 @@ import java.util.*;
 
 public class IterativeBot extends Player {
 
-  private Map<Integer, Element> moves;
   private Iterator<Element> i;
 
   public IterativeBot(String name) {
@@ -15,8 +14,12 @@ public class IterativeBot extends Player {
   }
 
   public void setMoves(Map<Integer, Element> moves) {
-    this.moves = moves;
-     i = moves.values().iterator();
+    super.setMoves(moves);
+    i = moves.values().iterator();
+  }
+
+  public Map<Integer, Element> getMoves() {
+    return super.getMoves();
   }
 
   public Element getPrevMove() {
@@ -30,10 +33,9 @@ public class IterativeBot extends Player {
   @Override
   public Element play() {
     if (!i.hasNext()) {
-      i = moves.values().iterator();
+      i = getMoves().values().iterator();
     }
     Element e = i.next();
-    //super.setPrevMove(e);
     return e;
   }
 }

@@ -3,9 +3,7 @@ import java.util.*;
 
 public class LastPlayBot extends Player {
 
-  private Map<Integer, Element> moves;
   private boolean firstMove = true;
-//  private Player opponent;
 
   public LastPlayBot(String name) {
     super(name);
@@ -16,7 +14,11 @@ public class LastPlayBot extends Player {
   }
 
   public void setMoves(Map<Integer, Element> moves) {
-    this.moves = moves;
+    super.setMoves(moves);
+  }
+
+  public Map<Integer, Element> getMoves() {
+    return super.getMoves();
   }
 
   public void setOpponent(Player opponent) {
@@ -36,8 +38,8 @@ public class LastPlayBot extends Player {
 
     if (firstMove) {
       Random rand = new Random();
-      int n = rand.nextInt(moves.size())+1;
-      e = moves.get(n);
+      int n = rand.nextInt(getMoves().size())+1;
+      e = getMoves().get(n);
       firstMove = false;
     }
     else {

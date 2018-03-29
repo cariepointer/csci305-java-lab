@@ -2,7 +2,6 @@ package csci305.javalab;
 import java.util.*;
 
 public class MyBot extends Player {
-  private Map<Integer, Element> moves;
 
   public MyBot(String name) {
     super(name);
@@ -13,7 +12,11 @@ public class MyBot extends Player {
   }
 
   public void setMoves(Map<Integer, Element> moves) {
-    this.moves = moves;
+    super.setMoves(moves);
+  }
+
+  public Map<Integer, Element> getMoves() {
+    return super.getMoves();
   }
 
   public Element getPrevMove() {

@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.Random;
 
 public class RandomBot extends Player {
-  private Map<Integer, Element> moves;
+
   private Random rand;
 
   public RandomBot(String name) {
@@ -15,8 +15,12 @@ public class RandomBot extends Player {
   }
 
   public void setMoves(Map<Integer, Element> moves) {
-    this.moves = moves;
+    super.setMoves(moves);
     rand = new Random();
+  }
+
+  public Map<Integer, Element> getMoves() {
+    return super.getMoves();
   }
 
   public Element getPrevMove() {
@@ -30,9 +34,8 @@ public class RandomBot extends Player {
   @Override
   public Element play() {
 
-    int n = rand.nextInt(moves.size())+1;
-    Element e = moves.get(n);
-    //super.setPrevMove(e);
+    int n = rand.nextInt(getMoves().size())+1;
+    Element e = getMoves().get(n);
     return e;
   }
 }
