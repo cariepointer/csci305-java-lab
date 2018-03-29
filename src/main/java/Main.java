@@ -4,6 +4,7 @@ import java.util.*;
 public class Main {
   private static final Map<Integer, Element> moves = new HashMap<Integer, Element>();
   private static final Scanner s = new Scanner(System.in);
+  private static int p1score, p2score = 0;
 
   public static void main(String args[]) {
 
@@ -38,6 +39,7 @@ public class Main {
 
     Element e1;
     Element e2;
+    Outcome roundOutcome;
 
     for (int i = 0; i <4; i++) {
       e1 = p1.play();
@@ -45,13 +47,42 @@ public class Main {
       System.out.println("Round "+(i+1)+ ":");
       System.out.println("\tPlayer 1 chose "+ e1.getName());
       System.out.println("\tPlayer 2 chose "+ e2.getName());
-      System.out.println(e1.compareTo(e2));
-      System.out.println("=============================");
+      roundOutcome = e1.compareTo(e2);
+      System.out.println("\t"+roundOutcome.getOutcomeString());
+      printWinner(roundOutcome.getOutcomeDecision());
+      System.out.println("=============================\n");
       p1.setPrevMove(e1);
       p2.setPrevMove(e2);
     }
+    printFinalScore();
 
   }
+
+  public static void printWinner(String s) {
+    switch(s) {
+      case "Win": System.out.println("Player 1 won the round");
+            p1score++;
+            break;
+      case "Lose": System.out.println("Player 2 won the round");
+            p2score++;
+            break;
+      case "Tie": System.out.println("Round was a tie");
+            break;
+      default: System.out.println("There was an error");
+            break;
+    }
+  }
+
+  private static void printFinalScore() {
+    System.out.println("The score is "+p1score+ " to " + p2score);
+    if (p1score > p2score)
+      System.out.println("Player 1 wins!");
+    else if (p2score > p1score)
+      System.out.println("Player 2 wins!");
+    else
+      System.out.println("Game was a draw.");
+  }
+
 
   public static Player pickPlayer(int playerNum) {
 
