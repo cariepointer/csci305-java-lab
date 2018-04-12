@@ -5,6 +5,46 @@ boolean firstMove, which checks if it is the first move of that player. If it is
 play a random move. If it is not the first move, it calls the method getOppPrevMove(), which returns the LastPlayBot's
 opponent's previous move (as set previously by the Main class);
 
-2.
+2. The class MyBot only knows of the traditional game where the only moves are Rock, Paper, and Scissors. This bot
+randomly picks one of these moves every play. I accomplished this by creating a random number generator that only
+picks numbers between 1-3. The first three elements in my HashMap for the moves are Rock, Paper, and Scissors, so this
+bot will only ever pick one of those three methods.
 
-3. 
+3. Java is considered a statically typed language meaning variables have definitive types. The four main types in Java
+are primitive, null, array, and class types. Class types are custom user-defined types such as the bot classes I designed
+and implemented in this lab. These are valid types for variable declarations.
+Dynamically typed (weakly typed) languages perform type checking at runtime while
+statically typed languages (strong typed) perform type checking at compile time and will result in error if the wrong
+type is assigned to a variable. Dynamically typed languages do not require a type to be declared with a variable and
+variables can be reassigned to different types after declaration.
+
+Sources:
+https://www.safaribooksonline.com/library/view/java-in-a/9781449371296/ch04.html
+https://docs.oracle.com/cd/E57471_01/bigData.100/extensions_bdd/src/cext_transform_typing.html
+
+4. The two bots I have that use random number generators (MyBot and RandomBot) will still sometimes pick the same move
+several times in a row. Because it is randomly generating, you would assume that the moves should vary a bit more, but
+that's not necessarily true. I am able to beat the IterativeBot just because I know how it is picking it's moves, and
+obviously I can beat the StupidBot since it always picks the same move. If I'm playing Human vs Human I can always win
+too since I'm playing both sides!
+
+5. I would say for this game there really isn't a better strategy for winning than having a RandomBot. Each of the
+five moves can beat two moves or can be beat by two other moves. Since there is not one move that results in a better
+outcome than another move, it is hard to determine which strategy a bot could use. My best guess is the RandomBot would
+have the best chance because it is generating a move randomly from the pool of all 5 moves so each play it starts "fresh".
+Both players pick a move before comparing so it would be hard to guess which move the opposite player would pick.
+
+6. I like how Java is object-oriented. I think it makes it easier to track the state of elements in my program when I
+am working with OO programming languages such as java. I've worked with other types of languages and the challenging
+part for me is trying to create objects that maintain their state. I also just enjoy the syntax of java
+
+7. I don't have much to hate Java for, but java being statically typed is probably my least favorite part. I understand why
+it makes sense to do so, but when working in Python it's nice to not have to declare types!
+
+8. I enjoyed this lab because it was in a language I am most familiar with. I found it fairly simple to set up all of the
+classes. There wasn't a lot of challenging logic or implementations to figure out. I guess I didn't enjoy having to create
+5 very similar classes for the five moves.
+
+9. 6-7
+
+10. I've been programming with java for 2.5 years
