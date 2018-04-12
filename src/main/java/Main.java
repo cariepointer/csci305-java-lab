@@ -114,6 +114,7 @@ public class Main {
               player = lb;
               break;
       case 6: MyBot mb = new MyBot("MyBot");
+              mb.setMoves(moves);
               player = mb;
               break;
       default: player = null;
