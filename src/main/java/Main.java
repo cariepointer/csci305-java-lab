@@ -1,6 +1,9 @@
 package csci305.javalab;
 import java.util.*;
 
+/**
+* Main class used to create and run a new game
+**/
 public class Main {
   private static final Map<Integer, Element> moves = new HashMap<Integer, Element>();
   private static final Scanner s = new Scanner(System.in);
@@ -12,12 +15,14 @@ public class Main {
     Element e2;
     Outcome roundOutcome;
 
+    // Add all moves to the HashMap
     moves.put(1, new Rock("Rock"));
     moves.put(2, new Paper("Paper"));
     moves.put(3, new Scissors("Scissors"));
     moves.put(4, new Spock("Spock"));
     moves.put(5, new Lizard("Lizard"));
 
+    // Print player menu
     System.out.println("Welcome to Rock, Paper, Scissors, Lizard, Spock, implemented by Carie Pointer");
     System.out.println("Please choose two players:");
     System.out.println("(1) Human");
@@ -27,6 +32,7 @@ public class Main {
     System.out.println("(5) LastPlayBot");
     System.out.println("(6) MyBot");
 
+    // Call method to pick player with player's number
     System.out.print("Select Player 1: ");
     Player p1 = pickPlayer(1);
     System.out.print("Select Player 2: ");
@@ -34,17 +40,19 @@ public class Main {
 
     System.out.println("Player 1: " + p1.getName() + " vs. Player 2: " + p2.getName() + ". Go!");
 
+    // Loop through five rounds and print result
     for (int i = 0; i < 5; i++) {
       e1 = p1.play();
       e2 = p2.play();
       System.out.println("Round "+(i+1)+ ":");
       System.out.println("\tPlayer 1 chose "+ e1.getName());
       System.out.println("\tPlayer 2 chose "+ e2.getName());
-      roundOutcome = e1.compareTo(e2);
+      roundOutcome = e1.compareTo(e2); // Compare players' choices
       System.out.println("\t"+roundOutcome.getOutcomeString());
-      printRoundWinner(roundOutcome.getOutcomeDecision());
+      printRoundWinner(roundOutcome.getOutcomeDecision()); // Print correct string based on winner
       System.out.println("=============================\n");
 
+      // If either player is LastPlayBot, then set the opponent's previous move
       if (p1.getName() == "LastPlayBot") {
         p1.setOppPrevMove(e2);
       }
@@ -56,6 +64,7 @@ public class Main {
 
   }
 
+  // Print correct statement depending on winner of the round and increment winner's score
   public static void printRoundWinner(String s) {
     switch(s) {
       case "Win": System.out.println("Player 1 won the round");
@@ -71,6 +80,7 @@ public class Main {
     }
   }
 
+  // Compare the player's scores to determine the winner
   private static void printFinalScore() {
     System.out.println("The score is "+p1score+ " to " + p2score);
     if (p1score > p2score)
@@ -81,18 +91,19 @@ public class Main {
       System.out.println("Game was a draw.");
   }
 
-
+  // User-selected player method. Takes parameter of the player's number (1 or 2) for
+  // printing which player is currently selecting a bot
   public static Player pickPlayer(int playerNum) {
 
     Player player;
 
     int n = s.nextInt();
-    while (n > 6 || n < 1) {
+    while (n > 6 || n < 1) { // Print error if user types invalid choice
       System.out.println("Invalid choice. Please try again");
       System.out.print("Select Player " + playerNum + ": ");
       n = s.nextInt();
     }
-
+    // Switch statement to determine type of bot
     switch (n) {
       case 1: Human hp = new Human("Human");
               hp.setMoves(moves);

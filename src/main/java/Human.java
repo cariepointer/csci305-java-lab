@@ -1,9 +1,12 @@
 package csci305.javalab;
 import java.util.*;
 
+/**
+* Class Human takes user input for picking a move
+*/
 public class Human extends Player {
 
-  private Scanner s = new Scanner(System.in);
+  private Scanner s = new Scanner(System.in); // New scanner for user input
 
   public Human(String name) {
     super(name);
@@ -14,13 +17,14 @@ public class Human extends Player {
   }
 
   public void setMoves(Map<Integer, Element> moves) {
-    super.setMoves(moves);
+    super.setMoves(moves); // Add moves to super class
   }
 
   public Map<Integer, Element> getMoves() {
-    return super.getMoves();
+    return super.getMoves(); // Get moves from super class
   }
 
+  // Prints menu for possible moves
   @Override
   public Element play() {
     System.out.println("Move choices:");
@@ -32,7 +36,8 @@ public class Human extends Player {
     System.out.print("Enter your move: ");
     int n = s.nextInt();
 
-    while (n > 5) {
+    // Print error if user enters invalid choice
+    while (n > 5 || n < 1) {
       System.out.println("Invalid move. Please try again");
       System.out.print("Enter your move: ");
       n = s.nextInt();

@@ -1,5 +1,8 @@
 package csci305.javalab;
 
+/**
+* Class StupidBot only knows of the move "Rock" and always plays this move
+*/
 public class StupidBot extends Player {
 
   public StupidBot(String name) {
@@ -12,7 +15,7 @@ public class StupidBot extends Player {
 
   @Override
   public Element play() {
-    Element rock = new Rock("Rock");
+    Element rock = new Rock("Rock"); //Always playing Rock
     return rock;
   }
 }
